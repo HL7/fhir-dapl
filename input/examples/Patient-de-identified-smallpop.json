@@ -9,11 +9,11 @@
       },
       {
         "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-        "valueMarkdown": "This is a patient example for the *UDS+ Patient Profile*."
+        "valueMarkdown": "This is a patient example for the DAPL Deidentified Patient Profile*."
       }
     ],
     "profile": [
-      "http://hl7.org/fhir/us/uds-plus/StructureDefinition/de-identified-uds-plus-patient"
+      "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-patient"
     ]
   },
   "extension": [
@@ -68,11 +68,11 @@
       "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
     },
     {
-      "url": "http://hl7.org/fhir/us/uds-plus/StructureDefinition/uds-plus-birthsex-extension",
+      "url": "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-birthsex-extension",
       "valueCode": "F"
     },
     {
-      "url": "http://hl7.org/fhir/us/uds-plus/StructureDefinition/uds-plus-age-extension",
+      "url": "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-age-extension",
       "valueQuantity": {
       	"value" : 36,
     	"unit" : "yr",

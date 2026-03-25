@@ -19,7 +19,7 @@
   <title value="De-Identified, Anonymized FHIR Profiles Library"/>
   <status value="active"/>
   <experimental value="false"/>
-  <publisher value="HL7 International / Cross Group Projects"/>
+  <publisher value="HL7 International / Cross-Group Projects"/>
   <contact>
     <telecom>
       <!-- Or whatever URL and/or email address(es) are appropriate -->
@@ -27,7 +27,7 @@
       <value value="http://www.hl7.org/Special/committees/cgp"/>
     </telecom>
   </contact>
-  <description value="A brief description of what DAPL is about (probably the same text as in your readme)"/>
+  <description value="DAPL IG defines a set of profiles that can be used to represent deidentified and anonymized data"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -49,14 +49,14 @@
   <dependsOn id="usnlmvsac">
     <uri value="http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac" />
     <packageId value="us.nlm.vsac" />
-    <version value="0.15.0" />
+    <version value="0.24.0" />
   </dependsOn>
   
-  <dependsOn id="uscdcphinvads">
+<!--  <dependsOn id="uscdcphinvads">
     <uri value="http://fhir.org/packages/us.cdc.phinvads/ImplementationGuide/us.cdc.phinvads" />
     <packageId value="us.cdc.phinvads" />
     <version value="0.12.0" />
-  </dependsOn>
+  </dependsOn> -->
 
   <definition>
     <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
@@ -68,6 +68,30 @@
       </reference>
       <name value="US Core Patient Example"/>
       <description value="An Example of a conformant US Core Patient resource with identifiable information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Patient/smallpop-example"/>
+      </reference>
+      <name value="US Core Patient identified to be part of a small population "/>
+      <description value="An Example of a conformant US Core Patient resource with identifiable small popultion information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Encounter/example"/>
+      </reference>
+      <name value="US Core Encounter Example"/>
+      <description value="An Example of a conformant US Core Encounter resource with identifiable information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Condition/example"/>
+      </reference>
+      <name value="US Core Condition Example"/>
+      <description value="An Example of a conformant US Core Condition resource with identifiable information."/>
       <exampleBoolean value="true"/>
    </resource>
    <resource>
@@ -96,30 +120,119 @@
    </resource>
    <resource>
       <reference>
-        <reference value="Parameters/reporting-parameters-example"/>
+        <reference value="Organization/acme-payer"/>
       </reference>
-      <name value="UDS Plus Reporting Parameters Example"/>
-      <description value="An Example of a conformant UDS Plus Reporting Parameters resource with de-identifeid information."/>
+      <name value="US Core Payer Organization Example"/>
+      <description value="An Example of a conformant US Core Payer Organization resource with identifiable information."/>
       <exampleBoolean value="true"/>
-   </resource>
-   <resource>
-      <reference>
-        <reference value="Parameters/de-identify-data-operation-urls-example"/>
-      </reference>
-      <name value="UDS Plus Parameters Example for $deidentify operation"/>
-      <description value="An Example of a conformant UDS Plus Parameters resource for sending input and receiving output from $deidentify operation."/>
-      <exampleBoolean value="true"/>
-   </resource>   
+   </resource> 
    <resource>
       <reference>
         <reference value="RelatedPerson/de-identified-example"/>
       </reference>
-      <name value="UDS Plus RelatedPerson Example"/>
-      <description value="An Example of a conformant UDS Plus Related Person resource with de-identified information."/>
+      <name value="DAPL Deidentified RelatedPerson Example"/>
+      <description value="An Example of a conformant DAPL Related Person resource with deidentified information."/>
       <exampleBoolean value="true"/>
-   </resource>  
+   </resource> 
+   <resource>
+      <reference>
+        <reference value="MedicationStatement/de-identified-example"/>
+      </reference>
+      <name value="DAPL Deidentified MedicationStatement Example"/>
+      <description value="An Example of a conformant DAPL MedicationStatement resource with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource> 
+   <resource>
+      <reference>
+        <reference value="MedicationRequest/de-identified-example"/>
+      </reference>
+      <name value="DAPL Deidentified MedicationRequest Example"/>
+      <description value="An Example of a conformant DAPL MedicationRequest resource with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Observation/de-identified-lab-observation-example"/>
+      </reference>
+      <name value="DAPL Deidentified Lab Observation Example"/>
+      <description value="An Example of a conformant DAPL Lab Observation resource with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Immunization/de-identified-example"/>
+      </reference>
+      <name value="DAPL Deidentified Immunization Example"/>
+      <description value="An Example of a conformant DAPL Immunization resource with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Encounter/de-identified-example"/>
+      </reference>
+      <name value="DAPL Deidentified Encounter Example"/>
+      <description value="An Example of a conformant DAPL Encounter resource with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Coverage/de-identified-example"/>
+      </reference>
+      <name value="DAPL Deidentified Coverage Example"/>
+      <description value="An Example of a conformant DAPL Coverage resource with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Condition/de-identified-example"/>
+      </reference>
+      <name value="DAPL Deidentified Condition(Diagnosis) Example"/>
+      <description value="An Example of a conformant DAPL Condition(Diagnosis) resource with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="ServiceRequest/de-identified-example"/>
+      </reference>
+      <name value="DAPL Deidentified ServiceRequest Example"/>
+      <description value="An Example of a conformant DAPL ServiceRequest resource with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Procedure/de-identified-example"/>
+      </reference>
+      <name value="DAPL Deidentified Procedure Example"/>
+      <description value="An Example of a conformant DAPL Procedure resource with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Patient/de-identified-example"/>
+      </reference>
+      <name value="DAPL Deidentified Patient Example"/>
+      <description value="An Example of a conformant DAPL Patient resource with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Patient/de-identified-smallpop-example"/>
+      </reference>
+      <name value="DAPL Deidentified Patient Example that is part of a small population"/>
+      <description value="An Example of a conformant DAPL Patient resource with deidentified information who is part of a small population."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Observation/de-identified-income-example"/>
+      </reference>
+      <name value="DAPL Deidentified Income Observation Example"/>
+      <description value="An Example of a conformant DAPL Income Observation resource with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
    
-  
+   
+   
 
     <page>
       <!-- The root will always be toc.html - the template will force it if you don't do it -->
@@ -134,7 +247,7 @@
           <valueCode value="trial-use"/> 
         </extension>
         <nameUrl value="index.html"/>
-        <title value="UDS Plus Home Page"/>
+        <title value="DAPL Home Page"/>
         <generation value="html"/>
       </page>
       <page>
@@ -146,25 +259,9 @@
         <generation value="markdown"/>
       </page>
       <page>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-          <valueCode value="trial-use"/> 
-        </extension> 
-        <nameUrl value="spec.html"/>
-        <title value="FHIR API Reporting Specification"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-          <valueCode value="trial-use"/> 
-        </extension> 
-        <nameUrl value="implementation.html"/>
-        <title value="Implementation Notes"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
       	<extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
           <valueCode value="trial-use"/> 
-	</extension>
+	      </extension>
         <nameUrl value="usecases.html"/>
         <title value="Use Cases and Workflows"/>
         <generation value="markdown"/>
@@ -175,22 +272,6 @@
         </extension>
         <nameUrl value="changes.html"/>
         <title value="Change History"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-      	<extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-          <valueCode value="trial-use"/> 
-        </extension>
-        <nameUrl value="dataelements.html"/>
-        <title value="Data Elements and FHIR Mappings"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-      	<extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-          <valueCode value="trial-use"/> 
-        </extension>
-        <nameUrl value="reportingguidance.html"/>
-        <title value="Reporting Guidance"/>
         <generation value="markdown"/>
       </page>
       <page>
