@@ -1,15 +1,15 @@
 {
   "resourceType": "Patient",
-  "id": "de-identified-smallpop-example",
+  "id": "de-identified-age89-example",
   "meta": {
     "extension": [
       {
         "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-        "valueString": "De-identified Patient In Small Population Example"
+        "valueString": "De-identified Patient Aged 89 Example"
       },
       {
         "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-        "valueMarkdown": "This is a patient example for the DAPL Deidentified Patient Profile*."
+        "valueMarkdown": "This is a patient aged 89 and above example for the DAPL Deidentified Patient Profile*."
       }
     ],
     "profile": [
@@ -74,8 +74,9 @@
     {
       "url": "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-age-extension",
       "valueQuantity": {
-      	"value" : 36,
+      	"value" : 90,
     	"unit" : "yr",
+    	"comparator" : ">=",
     	"system" : "http://unitsofmeasure.org",
     	"code" : "a"
  	 }
@@ -85,7 +86,7 @@
   "gender": "female",
   "address": [
     {
-      "postalCode": "00000",
+      "postalCode": "00000-1234",
       "_postalCode": {
       "extension" : [ {
       	"url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",

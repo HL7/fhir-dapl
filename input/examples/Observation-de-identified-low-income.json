@@ -1,6 +1,6 @@
 {
     "resourceType": "Observation",
-    "id": "de-identified-income-example",
+    "id": "de-identified-low-income-example",
     "meta": {
         "profile": [
             "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-income-observation"
@@ -18,13 +18,10 @@
     "subject": {
         "reference": "Patient/de-identified-example"
     },
-    "effectiveDateTime": "2016-03-28",
+    "effectiveDateTime": "2016",
     "valueRange": {
-    	"low": {
-    		"value": 101
-    	},
     	"high": {
-    		"value": 150
+    		"value": 100
     	}
     }
 }

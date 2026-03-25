@@ -74,7 +74,7 @@
       <reference>
         <reference value="Patient/smallpop-example"/>
       </reference>
-      <name value="US Core Patient identified to be part of a small population "/>
+      <name value="US Core Patient identified to be part of a small population"/>
       <description value="An Example of a conformant US Core Patient resource with identifiable small popultion information."/>
       <exampleBoolean value="true"/>
    </resource>
@@ -230,9 +230,46 @@
       <description value="An Example of a conformant DAPL Income Observation resource with deidentified information."/>
       <exampleBoolean value="true"/>
    </resource>
-   
-   
-   
+   <resource>
+      <reference>
+        <reference value="Observation/de-identified-income-with-quantity-example"/>
+      </reference>
+      <name value="DAPL Deidentified Income Observation Example to represent Income using Quantity"/>
+      <description value="An Example of a conformant DAPL Income Observation resource with deidentified information where income is represented using quantity."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Observation/de-identified-low-income-example"/>
+      </reference>
+      <name value="DAPL Deidentified Income Observation Example for low income"/>
+      <description value="An Example of a conformant DAPL Income Observation representing low income with deidentified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Patient/de-identified-age89-example"/>
+      </reference>
+      <name value="DAPL Deidentified Patient Aged &gt;89 Example"/>
+      <description value="An Example of a conformant DAPL Deidentified Patient resource with age above 89."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="AdverseEvent/de-identified-example"/>
+      </reference>
+      <name value="DAPL Deidentified AdverseEventExample"/>
+      <description value="An Example of a conformant DAPL Deidentified AdverseEvent resource"/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="AllergyIntolerance/de-identified-example"/>
+      </reference>
+      <name value="DAPL Deidentified AllergyIntolerance Example"/>
+      <description value="An Example of a conformant DAPL Deidentified AllergyIntolerance resource."/>
+      <exampleBoolean value="true"/>
+   </resource>
 
     <page>
       <!-- The root will always be toc.html - the template will force it if you don't do it -->
@@ -256,6 +293,14 @@
         </extension>
         <nameUrl value="background.html"/>
         <title value="Background"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+      	<extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use"/> 
+        </extension>
+        <nameUrl value="spec.html"/>
+        <title value="Formal Specification"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -299,6 +344,87 @@
         <generation value="markdown"/>
       </page>
     </page>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="AdverseEvent/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="AllergyIntolerance/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Observation/clinical-result-de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Condition/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Coverage/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Immunization/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Observation/de-identified-lab-observation-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="MedicationRequest/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="MedicationStatement/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Patient/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Patient/de-identified-smallpop-example"/>
+    </parameter>
+        <parameter>
+      <code value="no-narrative"/>
+      <value value="Patient/de-identified-age89-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Procedure/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="RelatedPerson/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="ServiceRequest/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Encounter/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Observation/de-identified-income-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Observation/de-identified-low-income-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Observation/de-identified-income-with-quantity-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Observation/de-identified-example"/>
+    </parameter>  
+    
     <!-- copyright year is a mandatory parameter -->
     <parameter>
       <code value="copyrightyear"/>
