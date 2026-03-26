@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="dapl-deidentified-race-extension"/>
+    <id value="dapl-race-extension"/>
     <meta>
         <versionId value="2"/>
         <lastUpdated value="2026-03-27T02:03:21.911+00:00"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-race-extension"/>
+    <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-race-extension"/>
     <version value="0.1.0"/>
     <name value="DAPLDeidentifiedRaceExtension"/>
     <title value="DAPL Deidentified Race Extension"/>
@@ -48,8 +48,8 @@
         <element id="Extension.extension:detailed">
             <path value="Extension.extension"/>
             <sliceName value="detailed"/>
-            <min value="1"/>
-      		<max value="*"/>
+            <min value="0"/>
+      		<max value="0"/>
         </element>
     </differential>
 </StructureDefinition>

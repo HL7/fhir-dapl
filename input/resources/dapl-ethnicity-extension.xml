@@ -48,8 +48,8 @@
         <element id="Extension.extension:detailed">
             <path value="Extension.extension"/>
             <sliceName value="detailed"/>
-            <min value="1"/>
-      		<max value="*"/>
+            <min value="0"/>
+      		<max value="0"/>
         </element>
     </differential>
 </StructureDefinition>
