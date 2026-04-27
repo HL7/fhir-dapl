@@ -9,7 +9,7 @@
     <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-relatedperson"/>
     <version value="1.0.0"/>
     <name value="DAPLDeidentifiedRelatedPerson"/>
-    <title value="DAPL Deidentified RelatedPerson"/>
+    <title value="DAPL De-identified RelatedPerson"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Cross-Group Projects"/>

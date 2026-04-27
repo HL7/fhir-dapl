@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="dapl-anonymized-dataset"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2026-03-27T02:03:11.293+00:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-anonymized-dataset"/>
+    <version value="1.0.0"/>
+    <name value="DAPLAnonymizedDataset"/>
+    <title value="DAPL Anonymized Dataset"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <publisher value="HL7 Cross-Group Projects"/>
+    <description value="This profile is used to represent an anonymized dataset"/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+        <text value="United States of America"/>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="MeasureReport"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MeasureReport"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="MeasureReport">
+            <path value="MeasureReport"/>
+            <short value="DAPL Anonymized Dataset"/>
+            <definition value="The profile establishes the core elements, extensions, vocabularies and value sets for representing an anonymized dataset"/>
+        </element>
+    </differential>
+</StructureDefinition>

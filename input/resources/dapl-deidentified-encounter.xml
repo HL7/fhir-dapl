@@ -9,7 +9,7 @@
     <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-encounter"/>
     <version value="1.0.0"/>
     <name value="DAPLEncounter"/>
-    <title value="DAPL Deidentified Encounter"/>
+    <title value="DAPL De-identified Encounter"/>
     <status value="active"/>
     <experimental value="false"/>
     <publisher value="HL7 Cross-Group Projects"/>
