@@ -28,3 +28,4 @@ The Data Submitter has to truncate the following dates to only have a precision 
 * performedDateTime 
 * extension.recordedDate
 
+ 
