@@ -29,5 +29,5 @@ Income ranges are represented using the Observation.valueRange element. The foll
 
 **Examples**
  
-Examples of identifiable data and its corresponding de-identifiable data is present in [Reporting Guidance](reportingguidance.html).
+Examples of identifiable data and its corresponding de-identifiable data are present in the [FHIR Artifacts examples](artifacts.html)
 

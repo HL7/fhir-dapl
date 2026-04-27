@@ -52,14 +52,7 @@
             "display": "Hispanic or Latino"
           }
         },
-        {
-          "url" : "detailed",
-          "valueCoding" : {
-            "system" : "urn:oid:2.16.840.1.113883.6.238",
-            "code" : "2184-0",
-            "display" : "Dominican"
-          }
-        },
+
         {
           "url": "text",
           "valueString": "Hispanic or Latino"

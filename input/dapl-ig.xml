@@ -16,7 +16,7 @@
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
   <version value="0.1.0"/>
   <name value="DAPL"/>
-  <title value="De-Identified, Anonymized FHIR Profiles Library"/>
+  <title value="De-identified, Anonymized FHIR Profiles Library"/>
   <status value="active"/>
   <experimental value="false"/>
   <publisher value="HL7 International / Cross-Group Projects"/>
@@ -45,14 +45,15 @@
     <packageId value="hl7.fhir.us.core"/>
     <version value="8.0.1"/>
   </dependsOn>
-  
+ 
   <dependsOn id="usnlmvsac">
     <uri value="http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac" />
     <packageId value="us.nlm.vsac" />
     <version value="0.24.0" />
-  </dependsOn>
+  </dependsOn> 
   
-<!--  <dependsOn id="uscdcphinvads">
+   <!--
+  <dependsOn id="uscdcphinvads">
     <uri value="http://fhir.org/packages/us.cdc.phinvads/ImplementationGuide/us.cdc.phinvads" />
     <packageId value="us.cdc.phinvads" />
     <version value="0.12.0" />
@@ -62,6 +63,14 @@
     <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
       inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
  
+ <resource>
+      <reference>
+        <reference value="Bundle/dapl-deidentified-bundle"/>
+      </reference>
+      <name value="Bundle Example containing de-identified data using DAPL profiles"/>
+      <description value="An Example of a Bundle containing de-identified data using DAPL profiles."/>
+      <exampleBoolean value="true"/>
+   </resource>
   <resource>
       <reference>
         <reference value="Patient/example"/>

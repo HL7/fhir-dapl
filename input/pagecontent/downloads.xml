@@ -45,4 +45,25 @@
 			</tr>
 		</tbody>
 	</table>
+	
+	<h3>Cross Version Analysis</h3>
+
+{% include cross-version-analysis.xhtml %}
+
+#### Dependency Table
+
+{% include dependency-table.xhtml %}
+
+#### Globals Table
+
+{% include globals-table.xhtml %}
+
+#### IP Statements
+
+{% include ip-statements.xhtml %}
+
+#### Expansion parameters 
+
+{% include expansion-params.xhtml %}
+	
 </div>

@@ -3,13 +3,9 @@
 # Resources in DAPL are de-identified and text is not allowed, hence the resources should not have text.
 Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 
-# The Terminology Server does not have the CodeSystem loaded
-The definition for the Code System with URI 'urn:oid:2.16.840.1.113883.6.238' doesn't provide any codes so the code cannot be validated
-
 # Best Practice Recommendation which is not required by UDS+
 Best Practice Recommendation: In general, all observations should have a performer
 
 # Messages from the Base Specification
 The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
-The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex
 

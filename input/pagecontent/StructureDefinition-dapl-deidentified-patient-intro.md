@@ -55,5 +55,6 @@ Health Centers which have not implemented the methods to capture Gender Identity
   
 
 **Examples** 
-Examples of identifiable data and its corresponding de-identifiable data is present in [Reporting Guidance](reportingguidance.html).
+
+Examples of identifiable data and its corresponding de-identifiable data are present in the [FHIR Artifacts examples](artifacts.html)
 

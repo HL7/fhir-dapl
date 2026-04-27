@@ -51,17 +51,6 @@
     "start": "2022",
     "end": "2022"
   },
-  "hospitalization": {
-    "dischargeDisposition": {
-      "coding": [
-        {
-          "system": "http://www.nubc.org/patient-discharge",
-          "code": "01",
-          "display": "Discharged to Home"
-        }
-      ]
-    }
-  },
   "location": [
     {
       "location": {

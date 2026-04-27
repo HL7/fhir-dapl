@@ -31,5 +31,5 @@ The Data Submitter has to truncate the following dates to only have a precision 
 
 **Examples**
 
-Examples of identifiable data and its corresponding de-identifiable data is present in [Reporting Guidance](reportingguidance.html).
+Examples of identifiable data and its corresponding de-identifiable data are present in the [FHIR Artifacts examples](artifacts.html)
 

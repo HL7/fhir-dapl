@@ -14,7 +14,7 @@ Before reading this formal specification, implementers should first be familiar 
 
 #### Conventions
 
-This implementation guide uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
+This IG uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
 
 * **SHALL** indicates requirements that must be met to be conformant with the specification.
 
@@ -25,25 +25,26 @@ This implementation guide uses specific terminology to flag statements that have
 
 #### Claiming Conformance 
 
-Actors and Systems asserting conformance to this implementation guide will use the profiles defined by this IG to exchange deidentified or anonymized data. This is typically done by implementing the DARTS IG. 
+Actors and systems asserting conformance to this IG will use the profiles defined by this IG to exchange de-identified or anonymized data. This is typically done by implementing the DARTS IG.
 
 The following definition of MUST SUPPORT is to be used in the implementation of the requirements.
+
 
 ##### MUST SUPPORT Definition
 
 * Systems SHALL be capable of populating data elements as specified by the profiles 
 * Systems SHALL be capable of processing resource instances containing the MUST SUPPORT data elements without generating an error or causing the application to fail. 
-* Systems SHOULD be capable of displaying the MUST SUPPORT data elements for human use or storing it for other purposes.
+* Systems SHOULD be capable of displaying the MUST SUPPORT data elements for human use or storing the data elements for other purposes.
 * Systems SHOULD not include any additional extensions or data elements that is not identified as MUST SUPPORT in the profiles, unless there is a valid reason. 
 * In situations where information on a particular data element is not present and the reason for absence is unknown, Systems SHALL NOT include the data elements or DataAbsentReason extension in the resource instance unless explicitly required by the profile.
 
 
 #### Profiles
-This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html) and terminology artifacts to describe the content to be shared as part of UDS+ workflows. The implementation guide is based on [FHIR R4]({{site.data.fhir.path}}) and profiles are listed for each interaction.
+This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html) and terminology artifacts to describe the content to be shared as data exchange workflows. The implementation guide is based on [FHIR R4]({{site.data.fhir.path}}) and profiles are listed for each interaction.
 
 The full set of profiles defined in this implementation guide can be found by following the links on the [FHIR Artifacts](artifacts.html) page.
 
 
 #### System Actors, Requirements and Capability Statements
 
-This DAPL IG does not specify any Capability Statements or Systems or Actors as this is just a library and the implementers of other IGs such as DARTS IG will specify the actors and Capability Statements required. 
+This DAPL IG does not specify any capability statements or systems or actors as this is just a library and the implementers of other IGs such as DARTS IG will specify the actors and Capability Statements required. 

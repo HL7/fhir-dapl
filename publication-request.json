@@ -1,11 +1,15 @@
 {
-  "package-id" : "hl7.fhir.us.central-cancer-registry-reporting",
-  "version" : "2.0.0-ballot",
-  "path" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/2026Jan",
+  "package-id" : "hl7.fhir.us.dapl",
+  "version" : "1.0.0-ballot",
+  "path" : "http://hl7.org/fhir/us/dapl/2026May",
   "mode" : "working",
   "milestone" : "true",
   "status" : "ballot",
-  "sequence" : "STU 2",
-  "desc" : "This is the STU 2 - Ballot version of the Central Cancer Registry Reporting FHIR IG.",
-  "changes" : "changes.html"
+  "sequence" : "STU1",
+  "desc" : "This is the STU 1 - Ballot version of the DeIdentification and Anonymization Profiles Library (DAPL) FHIR IG.",
+  "changes" : "changes.html",
+  "first" : "true",
+  "title" : "De-identified, Anonymized FHIR Profiles Library (DAPL) IG",
+  "ci-build" : "https://build.fhir.org/ig/HL7/fhir-dapl/",
+  "introduction" : "De-identified, Anonymized Profiles Library (DAPL) FHIR IG defines a set of FHIR profiles to represent de-identified and anonymized data."  
 }

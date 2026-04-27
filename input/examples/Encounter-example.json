@@ -46,18 +46,6 @@
     "start": "2015-11-01T17:00:14-05:00",
     "end": "2015-11-01T18:00:14-05:00"
   },
-  "hospitalization" : {
-    "dischargeDisposition" : {
-      "coding" : [
-        {
-          "system" : "http://www.nubc.org/patient-discharge",
-          "code" : "01",
-          "display" : "Discharged to Home"
-        }
-      ],
-      "text" : "Amy was dischaged to home"
-    }
-  },
   "location" : [
     {
       "location" : {
