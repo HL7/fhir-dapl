@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="dapl-birthsex-extension"/>
+    <id value="dapl-sex-extension"/>
     <meta>
         <versionId value="1"/>
         <lastUpdated value="2026-03-27T02:03:21.911+00:00"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-birthsex-extension"/>
+    <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-sex-extension"/>
     <version value="0.1.0"/>
-    <name value="DAPLBirthSexExtension"/>
-    <title value="DAPL Birth Sex Extension"/>
+    <name value="DAPLSexExtension"/>
+    <title value="DAPL Sex Extension"/>
     <status value="active"/>
     <experimental value="false"/>
     <date value="2026-03-27"/>
@@ -40,8 +40,8 @@
     <differential>
         <element id="Extension">
             <path value="Extension"/>
-            <short value="Indicates the birth sex of the Patient."/>
-            <definition value="Indicates the birth sex of the Patient"/>
+            <short value="Indicates the sex of the Patient."/>
+            <definition value="Indicates the sex of the Patient"/>
             <min value="1"/>
             <max value="1"/>
         </element>
@@ -50,7 +50,7 @@
             <type>
                 <code value="uri"/>
             </type>
-            <fixedUri value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-birthsex-extension"/>
+            <fixedUri value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-sex-extension"/>
         </element>
         <element id="Extension.value[x]">
             <path value="Extension.value[x]"/>
@@ -61,8 +61,8 @@
             </type>
             <binding>
                 <strength value="required"/>
-                <description value="The set of codes to be used for UDS+ reporting."/>
-                <valueSet value="http://hl7.org/fhir/us/dapl/ValueSet/dapl-birthsex-codes"/>
+                <description value="The set of codes to be used for sex reporting."/>
+                <valueSet value="http://hl7.org/fhir/us/dapl/ValueSet/dapl-sex-codes"/>
             </binding>
         </element>
     </differential>

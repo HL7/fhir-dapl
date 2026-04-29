@@ -83,7 +83,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension"/>
-                <profile value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-birthsex-extension"/>
+                <profile value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-sex-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>

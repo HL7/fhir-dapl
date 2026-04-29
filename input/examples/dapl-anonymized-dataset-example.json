@@ -1,0 +1,17 @@
+{
+  "resourceType" : "MeasureReport",
+  "id" : "dapl-anonymized-dataset-example",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-anonymized-dataset"]
+  },
+  "status" : "complete",
+  "type" : "summary",
+  "measure" : "http://example.org/Measure/anonymize-data",
+  "reporter" : {
+    "reference" : "Organization/holy-healthcare"
+  },
+  "period" : {
+    "start" : "2018-01-01",
+    "end" : "2018-01-31"
+  }
+}

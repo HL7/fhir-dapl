@@ -9,7 +9,7 @@
       },
       {
         "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-        "valueMarkdown": "This is a patient aged 89 and above example for the DAPL Deidentified Patient Profile*."
+        "valueMarkdown": "This is a patient aged 89 and above example for the DAPL De-identified Patient Profile*."
       }
     ],
     "profile": [
@@ -61,7 +61,7 @@
       "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
     },
     {
-      "url": "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-birthsex-extension",
+      "url": "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-sex-extension",
       "valueCode": "F"
     },
     {

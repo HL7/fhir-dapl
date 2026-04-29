@@ -4,7 +4,7 @@
   "meta": {
     "lastUpdated": "2017-05-26T11:56:57.250-04:00",
     "profile": [
-      "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-allergyintolerance"
+      "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-allergyintolerance"
     ]
   },
   "clinicalStatus" : {

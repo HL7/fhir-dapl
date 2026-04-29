@@ -34,5 +34,67 @@
             <short value="DAPL Anonymized Dataset"/>
             <definition value="The profile establishes the core elements, extensions, vocabularies and value sets for representing an anonymized dataset"/>
         </element>
+        <element id="MeasureReport.type">
+            <path value="MeasureReport.type"/>
+            <fixedCode value="summary"/>
+            <mustSupport value="true"/> 
+        </element>
+        <element id="MeasureReport.measure">
+            <path value="MeasureReport.measure"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/> 
+        </element>
+        <element id="MeasureReport.measure.extension:dataAbsentReason">
+            <path value="MeasureReport.measure.extension"/>
+            <sliceName value="dataAbsentReason"/>
+            <short value="Reason why the data is not present"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.2.0"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="MeasureReport.subject">
+            <path value="MeasureReport.subject"/>
+            <short value="Identifiable references cannot be included in the profile"/>
+            <min value="0"/>
+            <max value="0"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="MeasureReport.date">
+            <path value="MeasureReport.date"/>
+            <mustSupport value="true"/> 
+        </element>
+        <element id="MeasureReport.reporter">
+            <path value="MeasureReport.reporter"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+            </type>
+            <mustSupport value="true"/> 
+        </element>
+        <element id="MeasureReport.period">
+            <path value="MeasureReport.period"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/> 
+        </element>
+        <element id="MeasureReport.period.extension:dataAbsentReason">
+            <path value="MeasureReport.period.extension"/>
+            <sliceName value="dataAbsentReason"/>
+            <short value="Reason why the data is not present"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.2.0"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <!-- Stratifier / stratum / component 
+        Value at Stratum level -->
     </differential>
 </StructureDefinition>

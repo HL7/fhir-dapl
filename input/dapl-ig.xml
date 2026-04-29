@@ -14,7 +14,7 @@
   </extension>
   <url value="http://hl7.org/fhir/us/dapl/ImplementationGuide/dapl"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
-  <version value="0.1.0"/>
+  <version value="1.0.0-ballot"/>
   <name value="DAPL"/>
   <title value="De-identified, Anonymized FHIR Profiles Library"/>
   <status value="active"/>
@@ -121,6 +121,22 @@
    </resource>
    <resource>
       <reference>
+        <reference value="Location/deidentified-location-example"/>
+      </reference>
+      <name value="DAPL De-identified Location Example"/>
+      <description value="An Example of a conformant DAPL Location resource with de-identified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
+        <reference value="Organization/deidentified-organization-example"/>
+      </reference>
+      <name value="DAPL De-identified Organization Example"/>
+      <description value="An Example of a conformant DAPL Organization resource with de-identified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
         <reference value="Organization/holy-healthcare"/>
       </reference>
       <name value="US Core Healthcare Organization Example"/>
@@ -217,6 +233,14 @@
    </resource>
    <resource>
       <reference>
+        <reference value="Procedure/de-identified-not-done-example"/>
+      </reference>
+      <name value="DAPL De-identified Procedure not-done Example"/>
+      <description value="An Example of a conformant DAPL Procedure not performed resource with de-identified information."/>
+      <exampleBoolean value="true"/>
+   </resource>
+   <resource>
+      <reference>
         <reference value="Patient/de-identified-example"/>
       </reference>
       <name value="DAPL Deidentified Patient Example"/>
@@ -275,11 +299,27 @@
       <reference>
         <reference value="AllergyIntolerance/de-identified-example"/>
       </reference>
-      <name value="DAPL Deidentified AllergyIntolerance Example"/>
+      <name value="DAPL De-identified AllergyIntolerance Example"/>
       <description value="An Example of a conformant DAPL Deidentified AllergyIntolerance resource."/>
       <exampleBoolean value="true"/>
    </resource>
-
+   <resource>
+      <reference>
+        <reference value="Observation/de-identified-clinical-result-observation-example"/>
+      </reference>
+      <name value="DAPL De-identified ClinicalResult Example"/>
+      <description value="An Example of a conformant DAPL De-identified ClinicalResult Observation resource."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MeasureReport/dapl-anonymized-dataset-example"/>
+      </reference>
+      <name value="DAPL Anonymized Dataset Example"/>
+      <description value="An Example of a conformant DAPL Anonymized Dataset"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    
     <page>
       <!-- The root will always be toc.html - the template will force it if you don't do it -->
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -383,6 +423,10 @@
     </parameter>
     <parameter>
       <code value="no-narrative"/>
+      <value value="Observation/de-identified-clinical-result-observation-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
       <value value="MedicationRequest/de-identified-example"/>
     </parameter>
     <parameter>
@@ -404,6 +448,10 @@
     <parameter>
       <code value="no-narrative"/>
       <value value="Procedure/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Procedure/de-identified-not-done-example"/>
     </parameter>
     <parameter>
       <code value="no-narrative"/>
@@ -433,7 +481,11 @@
       <code value="no-narrative"/>
       <value value="Observation/de-identified-example"/>
     </parameter>  
-        <parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="MeasureReport/dapl-anonymized-dataset-example"/>
+    </parameter>
+    <parameter>
       <code value="no-narrative"/>
       <value value="Bundle/dapl-deidentified-bundle"/>
     </parameter> 
@@ -537,6 +589,10 @@
     <parameter>
       <code value="path-expansion-params"/>
       <value value="terminology-settings.json"/>
+    </parameter>
+    <parameter>
+      <code value="pin-canonicals"/>
+      <value value="pin-multiples"/>
     </parameter>
     
   </definition>

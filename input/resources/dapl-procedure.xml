@@ -56,12 +56,23 @@
         </element>
         <element id="Procedure.extension:assertedDate">
             <path value="Procedure.extension"/>
-            <sliceName value="recordedDate"/>
+            <sliceName value="assertedDate"/>
             <min value="0"/>
             <max value="1"/>
             <type>
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-recordedDate-extension"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Procedure.extension:eventRecordedDate">
+            <path value="Procedure.extension"/>
+            <sliceName value="eventRecordedDate"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-event-recorded-datetime-extension"/>
             </type>
             <mustSupport value="true"/>
         </element>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="dapl-deidentified-organization"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2026-03-27T02:03:21.911+00:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-organization"/>
+    <version value="1.0.0-ballot"/>
+    <name value="DAPLDeidentifiedOrganization"/>
+    <title value="DAPL De-identified Organization"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <date value="2026-03-27"/>
+    <publisher value="HL7 International - Cross-Group Projects"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://hl7.org/Special/committees/cgp"/>
+        </telecom>
+    </contact>
+    <description value="Indicates the Organization responsible for care or payments."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Organization"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Organization"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Organization">
+            <path value="Organization"/>
+            <short value="Indicates the organization where the services was provided or the entity responsible for the payments."/>
+            <definition value="Indicates the organization where the services was provided or the entity responsible for the paymente."/>
+        </element>
+    </differential>
+</StructureDefinition>

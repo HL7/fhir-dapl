@@ -1,6 +1,6 @@
 {
     "resourceType": "Procedure",
-    "id": "de-identified-example",
+    "id": "de-identified-not-done-example",
     "meta": {
         "profile": [
             "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-procedure"
@@ -8,11 +8,11 @@
     },
     "extension": [
     {
-      "url": "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-recordedDate-extension",
+      "url": "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-event-recorded-datetime-extension",
       "valueDateTime": "2026-06-08T10:57:34-05:00"
     }
     ],
-    "status": "completed",
+    "status": "not-done",
     "code": {
         "coding": [
             {
@@ -28,7 +28,6 @@
     "encounter": {
         "reference": "Encounter/de-identified-example"
     },
-    "performedDateTime": "2005",
     "performer": [
         {
             "actor": {
@@ -36,15 +35,15 @@
             }
         }
     ],
-    "bodySite": [
+    "reasonCode" : [
+    {
+      "coding" : [
         {
-            "coding": [
-                {
-                    "system": "http://snomed.info/sct",
-                    "code": "44567001",
-                    "display": "Tracheal structure"
-                }
-            ]
+          "system" : "http://snomed.info/sct",
+          "code" : "183932001"
         }
-    ]
+      ],
+      "text": "Patient requests alternate procedure"
+    }
+   ]
 }
