@@ -1,6 +1,3 @@
-{:.stu-note}
-All canonical (Official) URLs will be changed in the future and are not available currently on the web.
-
 ### Introduction
 
 This profile is used to represent de-identified AdverseEvent information. The de-identification process has to remove all data elements not explicitly identified as "SUPPORTED" in the profile. 
@@ -13,7 +10,7 @@ In FHIR Resources, text elements and reference.display elements which provide hu
 
 **Ids and References**
 
-The original AdverseEvent resource id should not be included in the De-identified AdverseEvent instance. Instead a new id should be created and provided as part of the FHIR resource. The Data Submitter should be capable of using the generated id to relink the data to the original AdverseEvent. All resource references to the AdverseEvent submitted as part of the UDS+ report should refer to newly generated id.
+The original AdverseEvent resource id should not be included in the De-identified AdverseEvent instance. Instead a new id should be created and provided as part of the FHIR resource. The Data Submitter should be capable of using the generated id to relink the data to the original AdverseEvent. All resource references to the AdverseEvent submitted as part of data exchange should refer to newly generated id.
 
 Resource references cannot contain text element as it may contain PHI/PII. The text element for following references are not allowed
 
@@ -22,7 +19,7 @@ Resource references cannot contain text element as it may contain PHI/PII. The t
 
 **Date Truncation** 
 
-The Data Submitter has to truncate the following dates to only have a precision of year
+The DARTS Service Provider has to truncate the following dates to only have a precision of year
 
 * date
 * recordedDate 

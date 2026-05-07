@@ -6,6 +6,12 @@
             "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-clinical-result-observation"
         ]
     },
+    "extension" : [
+    {
+      "url" : "http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-instant-extension",
+      "valueDateTime" : "2005"
+    }
+    ],
     "status": "final",
     "category": [
         {

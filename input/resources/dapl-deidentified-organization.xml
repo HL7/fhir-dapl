@@ -39,5 +39,73 @@
             <short value="Indicates the organization where the services was provided or the entity responsible for the payments."/>
             <definition value="Indicates the organization where the services was provided or the entity responsible for the paymente."/>
         </element>
+        <element id="Organization.text">
+            <path value="Organization.text"/>
+            <short value="Cannot include any text in the resource as part of the de-identified data."/>
+            <min value="0"/>
+            <max value="0"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Organization.contained">
+            <path value="Organization.contained"/>
+            <short value="Cannot include any contained resources in the resource as part of the de-identified data."/>
+            <min value="0"/>
+            <max value="0"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Organization.name">
+            <path value="Organization.name"/>
+            <short value="Cannot include any contained resources in the resource as part of the de-identified data."/>
+            <min value="0"/>
+            <max value="0"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Organization.address">
+            <path value="Organization.address"/>
+            <short value="Included only to support zip code"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Organization.address.text">
+            <path value="Organization.address.text"/>
+            <short value="Text cannot be included in the profile"/>
+            <min value="0"/>
+            <max value="0"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Organization.address.line">
+            <path value="Organization.address.line"/>
+            <short value="Street names cannot be included in the profile"/>
+            <min value="0"/>
+            <max value="0"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Organization.address.postalCode">
+            <path value="Organization.address.postalCode"/>
+            <short value="ZipCode must be included in the profile"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Organization.address.postalCode.extension:dataAbsentReason">
+            <path value="Organization.address.postalCode.extension"/>
+            <sliceName value="dataAbsentReason"/>
+            <short value="Reason why the data is not present"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.2.0"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Organization.address.postalCode.extension:dataAbsentReason.value[x]">
+            <path value="Organization.address.postalCode.extension.value[x]"/>
+            <min value="1"/>
+            <type>
+                <code value="code"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
     </differential>
 </StructureDefinition>

@@ -7,7 +7,7 @@
         <lastUpdated value="2026-03-27T02:03:11.293+00:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-encounter"/>
-    <version value="1.0.0"/>
+    <version value="1.0.0-ballot"/>
     <name value="DAPLEncounter"/>
     <title value="DAPL De-identified Encounter"/>
     <status value="active"/>
@@ -89,12 +89,6 @@
                 <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1267.23"/>
             </binding>
         </element>
-        <element id="Encounter.type.text">
-            <path value="Encounter.type.text"/>
-            <min value="0"/>
-            <max value="0"/>
-            <mustSupport value="false"/>  
-        </element>
         <element id="Encounter.subject">
             <path value="Encounter.subject"/>
             <min value="1"/>
@@ -123,16 +117,44 @@
             <max value="*"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Encounter.participant.type.text">
-            <path value="Encounter.participant.type.text"/>
-            <min value="0"/>
-            <max value="0"/>
-            <mustSupport value="false"/>  
-        </element>
         <element id="Encounter.participant.period">
             <path value="Encounter.participant.period"/>
             <min value="0"/>
             <max value="1"/>
+		      <constraint>
+		        <key value="dapl-enc-1"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is Period and $this.start.exists() implies $this.start.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-enc-1a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is Period and Period.start.exists() implies $this.start.toString() &gt;= '1900'"/>
+		      </constraint>
+		    
+		      <constraint>
+		        <key value="dapl-enc-2"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.emd data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is Period and $this.end.exists() implies $this.end.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="uds-plus-enc-2a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.end data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is Period and Period.end.exists() implies $this.end.toString() &gt;= '1900'"/>
+		      </constraint>
+		      
             <mustSupport value="true"/>
         </element>
         <element id="Encounter.participant.individual">
@@ -149,6 +171,40 @@
             <path value="Encounter.period"/>
             <min value="0"/>
             <max value="1"/>
+            <constraint>
+		        <key value="dapl-enc-3"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is Period and $this.start.exists() implies $this.start.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-enc-3a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is Period and Period.start.exists() implies $this.start.toString() &gt;= '1900'"/>
+		      </constraint>
+		    
+		      <constraint>
+		        <key value="dapl-enc-4"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.emd data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is Period and $this.end.exists() implies $this.end.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="uds-plus-enc-4a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.end data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is Period and Period.end.exists() implies $this.end.toString() &gt;= '1900'"/>
+		      </constraint>
+		      
             <mustSupport value="true"/> 
         </element>
         <element id="Encounter.reasonCode">
@@ -157,12 +213,7 @@
             <max value="*"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Encounter.reasonCode.text">
-            <path value="Encounter.reasonCode.text"/>
-            <min value="0"/>
-            <max value="0"/>
-            <mustSupport value="false"/>
-        </element>
+        
         <element id="Encounter.reasonReference">
             <path value="Encounter.reasonReference"/>
             <min value="0"/>
@@ -224,12 +275,7 @@
                 <valueSet value="http://terminology.hl7.org/ValueSet/v3-USEncounterDischargeDisposition|5.0.0"/>
             </binding>
         </element>
-        <element id="Encounter.hospitalization.dischargeDisposition.text">
-            <path value="Encounter.hospitalization.dischargeDisposition.text"/>
-            <min value="0"/>
-            <max value="0"/>
-            <mustSupport value="false"/>
-        </element>
+        
         <element id="Encounter.location">
             <path value="Encounter.location"/>
             <min value="0"/>

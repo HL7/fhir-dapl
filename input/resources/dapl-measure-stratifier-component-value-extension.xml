@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="dapl-age-extension"/>
+    <id value="dapl-measure-stratifier-component-value-extension"/>
     <meta>
         <versionId value="1"/>
         <lastUpdated value="2022-07-12T02:03:21.911+00:00"/>
     </meta>
-    <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-age-extension"/>
+    <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-measure-stratifier-component-value-extension"/>
     <version value="1.0.0-ballot"/>
-    <name value="DAPLAgeExtension"/>
-    <title value="DAPL Age Extension"/>
+    <name value="DAPLMeasureStratifierComponentValueExtension"/>
+    <title value="DAPL MeasureStratifierComponentValue Extension"/>
     <status value="active"/>
     <experimental value="false"/>
     <date value="2026-03-27"/>
@@ -20,7 +20,7 @@
             <value value="http://hl7.org/Special/committees/cgp"/>
         </telecom>
     </contact>
-    <description value="Indicates the age of the patient at a specific time"/>
+    <description value="Indicates the value of a component within a MeasureReport Stratifier"/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -32,11 +32,27 @@
     <abstract value="false"/>
     <context>
         <type value="element"/>
-        <expression value="Patient"/>
+        <expression value="MeasureReport"/>
     </context>
     <context>
         <type value="element"/>
-        <expression value="Encounter"/>
+        <expression value="MeasureReport.group"/>
+    </context>
+    <context>
+        <type value="element"/>
+        <expression value="MeasureReport.group.stratifier"/>
+    </context>
+    <context>
+        <type value="element"/>
+        <expression value="MeasureReport.group.stratifier.stratum"/>
+    </context>
+    <context>
+        <type value="element"/>
+        <expression value="MeasureReport.group.stratifier.stratum.component"/>
+    </context>
+    <context>
+        <type value="element"/>
+        <expression value="MeasureReport.group.stratifier.stratum.component.value"/>
     </context>
     <type value="Extension"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
@@ -44,8 +60,8 @@
     <differential>
         <element id="Extension">
             <path value="Extension"/>
-            <short value="Indicates the age of the Patient."/>
-            <definition value="Indicates the age of the Patient computed based on date of birth at a specific time"/>
+            <short value="Indicates the value of a component within a MeasureReport Stratifier"/>
+            <definition value="Indicates the value of a component within a MeasureReport Stratifier"/>
             <min value="1"/>
             <max value="1"/>
         </element>
@@ -54,18 +70,12 @@
             <type>
                 <code value="uri"/>
             </type>
-            <fixedUri value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-age-extension"/>
+            <fixedUri value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-measure-stratifier-component-value-extension"/>
         </element>
         <element id="Extension.value[x]">
             <path value="Extension.value[x]"/>
             <min value="1"/>
             <max value="1"/>
-            <type>
-                <code value="Quantity"/>
-            </type>
-            <type>
-                <code value="Range"/>
-            </type>
         </element>
     </differential>
 </StructureDefinition>

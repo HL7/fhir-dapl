@@ -7,7 +7,7 @@
         <lastUpdated value="2026-03-27T02:03:11.293+00:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-coverage"/>
-    <version value="1.0.0"/>
+    <version value="1.0.0-ballot"/>
     <name value="DAPLCoverage"/>
     <title value="DAPL Coverage"/>
     <status value="active"/>
@@ -71,6 +71,12 @@
             </type>
             <mustSupport value="true"/>
         </element>
+        <element id="Coverage.policyHolder.display">
+	      <path value="Coverage.policyHolder.display"/>
+	      <min value="0"/>
+	      <max value="0"/>
+	      <mustSupport value="false"/>
+	    </element>
         <element id="Coverage.beneficiary">
             <path value="Coverage.beneficiary"/>
             <type>
@@ -87,6 +93,38 @@
         </element>
         <element id="Coverage.period">
             <path value="Coverage.period"/>
+		      <constraint>
+		        <key value="dapl-cov-1"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is Period and Period.start.exists() implies $this.start.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-cov-1a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is Period and Period.start.exists() implies $this.start.toString() &gt;= '1900'"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-cov-2"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.emd data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is Period and Period.end.exists() implies $this.end.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-cov-2a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.end data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is Period and Period.end.exists() implies $this.end.toString() &gt;= '1900'"/>
+		      </constraint>
             <mustSupport value="true"/>
         </element>
         <element id="Coverage.payor">
@@ -105,5 +143,11 @@
             <max value="0"/>
             <mustSupport value="false"/>
         </element>
+         <element id="Coverage.costToBeneficiary">
+	      <path value="Coverage.costToBeneficiary"/>
+	      <min value="0"/>
+	      <max value="0"/>
+	      <mustSupport value="false"/>
+	    </element>
     </differential>
 </StructureDefinition>

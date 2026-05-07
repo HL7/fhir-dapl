@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="dapl-deidentified-instant-extension"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2026-03-27T02:03:21.911+00:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-instant-extension"/>
+    <version value="1.0.0-ballot"/>
+    <name value="DAPLDeIdentifiedInstantExtension"/>
+    <title value="DAPL De-Identified Instant Extension"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <date value="2026-03-27"/>
+    <publisher value="HL7 International - Cross-Group Projects"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://hl7.org/Special/committees/cgp"/>
+        </telecom>
+    </contact>
+    <description value="Indicates the de-identified instant that can be used for any clinical event"/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+   <context>
+    <type value="element"/>
+    <expression value="Observation"/>
+   </context>
+   <context>
+     <type value="element"/>
+    <expression value="Condition"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+    <element id="Extension">
+      <path value="Extension"/>
+      <short value="Indicates the time with a precision of only Year."/>
+      <definition
+                  value="Indicates the time with a precision of only Year. This extension is to be used in lieu of data elements of type instant present within a FHIR Resource "/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url"/>
+      <type>
+        <code value="uri"/>
+      </type>
+      <fixedUri
+                value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-instant-extension"/>
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="dateTime"/>
+      </type>
+      <constraint>
+        <key value="dapl-datetime-1"/>
+        <severity value="error"/>
+        <human
+               value="All dateTime data elements should be truncated to a year only for de-identified resources."/>
+        <expression
+                    value="$this is DateTime implies $this.toString().length() = 4"/>
+      </constraint>
+      <constraint>
+        <key value="dapl-datetime-1a"/>
+        <severity value="error"/>
+        <human
+               value="All dateTime data elements should have valid year &gt; 1900"/>
+        <expression
+                    value="$this is DateTime implies $this.toString() &gt;= '1900'"/>
+      </constraint>
+    </element>
+  </differential>
+</StructureDefinition>

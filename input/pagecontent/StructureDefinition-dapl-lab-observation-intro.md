@@ -1,5 +1,3 @@
-{:.stu-note}
-All canonical (Official) URLs will be changed in the future and are not available currently on the web.
 
 ### Introduction
 
@@ -13,7 +11,7 @@ In FHIR Resources, text elements and reference.display elements which provide hu
 
 **Ids and References**
 
-The original Observation for Lab Result resource id should not be included in the De-identified Observation for Lab Result instance. Instead a new id should be created and provided as part of the FHIR resource. The Data Submitter should be capable of using the generated id to relink the data to the original Observation for Lab Result. All resource references to the Observation for Lab Result submitted as part of the UDS+ report should refer to newly generated id.
+The original Observation for Lab Result resource id should not be included in the De-identified Observation for Lab Result instance. Instead a new id should be created and provided as part of the FHIR resource. The Data Submitter should be capable of using the generated id to relink the data to the original Observation for Lab Result. All resource references to the Observation for Lab Result submitted as part of the data exchange should refer to newly generated id.
 
 Resource references cannot contain text element as it may contain PHI/PII. The text element for following references are not allowed
 
@@ -23,7 +21,7 @@ Resource references cannot contain text element as it may contain PHI/PII. The t
 
 **Date Truncation** 
 
-The Data Submitter has to truncate the following dates to only have a precision of year
+The DARTS Service Provider has to truncate the following dates to only have a precision of year
 
 * effective[x] 
 

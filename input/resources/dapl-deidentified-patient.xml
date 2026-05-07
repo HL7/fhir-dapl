@@ -7,7 +7,7 @@
         <lastUpdated value="2026-03-27T02:03:11.293+00:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-patient"/>
-    <version value="1.0.0"/>
+    <version value="1.0.0-ballot"/>
     <name value="DAPLDeIdentifiedPatient"/>
     <title value="DAPL De-identified Patient"/>
     <status value="active"/>
@@ -76,9 +76,9 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Patient.extension:birthSex">
+        <element id="Patient.extension:sex">
             <path value="Patient.extension"/>
-            <sliceName value="dapl-birthsex"/>
+            <sliceName value="dapl-sex"/>
             <min value="0"/>
             <max value="1"/>
             <type>
@@ -127,13 +127,44 @@
             <max value="0"/>
             <mustSupport value="false"/>
         </element>
-        <element id="Patient.deceased">
-            <path value="Patient.deceasedBoolean"/>
-            <short value="Can only have deceased boolean."/>
-            <min value="0"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
+        <element id="Patient.deceased[x]">
+		      <path value="Patient.deceased[x]"/>
+		      <short
+		             value="Indicates if the Patient is deceased, it can be either a Boolean or a Date with a precision of year only."/>
+		      <min value="0"/>
+		      <max value="1"/>
+		      <type>
+		        <extension
+		                   url="http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support">
+		          <valueBoolean value="true"/>
+		        </extension>
+		        <code value="dateTime"/>
+		      </type>
+		      <type>
+		        <extension
+		                   url="http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support">
+		          <valueBoolean value="true"/>
+		        </extension>
+		        <code value="boolean"/>
+		      </type>
+		      <constraint>
+		        <key value="dapl-date-1"/>
+		        <severity value="error"/>
+		        <human
+		               value="All dateTime data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is dateTime implies $this.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-date-1a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All dateTime data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is dateTime implies $this.toString() &gt;= '1900'"/>
+		      </constraint>
+		      <mustSupport value="true"/>
+    	</element>
         <element id="Patient.address">
             <path value="Patient.address"/>
             <short value="Included only to support zip code"/>
@@ -160,6 +191,14 @@
             <short value="ZipCode must be included in the profile"/>
             <min value="1"/>
             <max value="1"/>
+            <constraint>
+		        <key value="dapl-potalCode-1"/>
+		        <severity value="error"/>
+		        <human
+		               value="De-identified Zipcodes can contain first 3 digits followed by 00 in the last two digits or have to be masked with 00000. If the extended ZipCode format is used the resulting format should be #####-####."/>
+		        <expression value="$this.matches('^[0-9]{3}[0]{2}(-[0-9]{4})?$')"/>
+		        <xpath value="f:matches(postalCode,'^[0-9]{3}[0]{2}(-[0-9]{4})?$')"/>
+      		</constraint>
             <mustSupport value="true"/>
         </element>
         <element id="Patient.address.postalCode.extension:dataAbsentReason">

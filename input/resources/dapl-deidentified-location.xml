@@ -7,7 +7,7 @@
         <lastUpdated value="2026-03-27T02:03:21.911+00:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-deidentified-location"/>
-    <version value="0.1.0"/>
+    <version value="1.0.0-ballot"/>
     <name value="DAPLDeidentifiedLocation"/>
     <title value="DAPL De-identified Location"/>
     <status value="active"/>
@@ -31,13 +31,81 @@
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Location"/>
-    <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Location"/>
     <derivation value="constraint"/>
     <differential>
         <element id="Location">
             <path value="Location"/>
             <short value="Indicates the location where the service was provided"/>
             <definition value="Indicates the location where the service was provided"/>
+        </element>
+        <element id="Location.text">
+            <path value="Location.text"/>
+            <short value="Cannot include any text in the resource as part of the de-identified data."/>
+            <min value="0"/>
+            <max value="0"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Location.contained">
+            <path value="Location.contained"/>
+            <short value="Cannot include any contained resources in the resource as part of the de-identified data."/>
+            <min value="0"/>
+            <max value="0"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Location.name">
+            <path value="Location.name"/>
+            <short value="Cannot include any contained resources in the resource as part of the de-identified data."/>
+            <min value="0"/>
+            <max value="0"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Location.address">
+            <path value="Location.address"/>
+            <short value="Included only to support zip code"/>
+            <min value="0"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Location.address.text">
+            <path value="Location.address.text"/>
+            <short value="Text cannot be included in the profile"/>
+            <min value="0"/>
+            <max value="0"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Location.address.line">
+            <path value="Location.address.line"/>
+            <short value="Street names cannot be included in the profile"/>
+            <min value="0"/>
+            <max value="0"/>
+            <mustSupport value="false"/>
+        </element>
+        <element id="Location.address.postalCode">
+            <path value="Location.address.postalCode"/>
+            <short value="ZipCode must be included in the profile"/>
+            <min value="1"/>
+            <max value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Location.address.postalCode.extension:dataAbsentReason">
+            <path value="Location.address.postalCode.extension"/>
+            <sliceName value="dataAbsentReason"/>
+            <short value="Reason why the data is not present"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.2.0"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Location.address.postalCode.extension:dataAbsentReason.value[x]">
+            <path value="Location.address.postalCode.extension.value[x]"/>
+            <min value="1"/>
+            <type>
+                <code value="code"/>
+            </type>
+            <mustSupport value="true"/>
         </element>
     </differential>
 </StructureDefinition>

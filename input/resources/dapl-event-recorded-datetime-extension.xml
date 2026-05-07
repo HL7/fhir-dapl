@@ -7,7 +7,7 @@
         <lastUpdated value="2026-03-27T02:03:21.911+00:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-event-recorded-datetime-extension"/>
-    <version value="0.1.0"/>
+    <version value="1.0.0-ballot"/>
     <name value="DAPLEventRecordedDateTimeExtension"/>
     <title value="DAPL Event Recorded Date Time Extension"/>
     <status value="active"/>

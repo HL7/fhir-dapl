@@ -1,6 +1,6 @@
 ### Business Need and Use Cases
 
-The section identifies the business needs and specific user stories for DAPL FHIR IG. Please refer to the Use Cases section of the DARTS IG for business need and use cases. The link is not here to avoid the circular dependency.
+The section identifies the business needs and specific user stories for DAPL FHIR IG. Please refer to the Use Cases section of the DARTS IG for business need and use cases. The link is not included here to avoid the circular dependency.
 
 #### DAPL IG Profile Definitions and Conventions
 

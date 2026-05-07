@@ -7,7 +7,7 @@
         <lastUpdated value="2026-03-27T02:03:11.293+00:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-diagnosis"/>
-    <version value="1.0.0"/>
+    <version value="1.0.0-ballot"/>
     <name value="DAPLDiagnosis"/>
     <title value="DAPL Diagnosis"/>
     <status value="active"/>
@@ -54,6 +54,19 @@
             <max value="0"/>
             <mustSupport value="false"/>
         </element>
+        <element id="Condition.extension:uds-plus-age-extension">
+	      <path value="Condition.extension"/>
+	      <sliceName value="dapl-age-extension"/>
+	      <short value="Age of the Patient computed using birthDate."/>
+	      <min value="0"/>
+	      <max value="1"/>
+	      <type>
+	        <code value="Extension"/>
+	        <profile
+	                 value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-age-extension"/>
+	      </type>
+	      <mustSupport value="true"/>
+	    </element>
         <element id="Condition.extension:assertedDate">
             <path value="Condition.extension"/>
             <sliceName value="assertedDate"/>
@@ -63,6 +76,22 @@
                 <code value="Extension"/>
                 <profile value="http://hl7.org/fhir/StructureDefinition/condition-assertedDate|5.2.0"/>
             </type>
+		      <constraint>
+		        <key value="dapl-diag-1"/>
+		        <severity value="error"/>
+		        <human
+		               value="All dateTime data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this.value.ofType(dateTime) implies $this.value.ofType(dateTime).toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-diag-1a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All dateTime data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this.value.ofType(dateTime) implies $this.value.ofType(dateTime).toString() &gt;= '1900'"/>
+		      </constraint>
             <mustSupport value="true"/>
         </element>
         <element id="Condition.clinicalStatus">
@@ -71,24 +100,14 @@
             <max value="1"/>
             <mustSupport value="true"/>  
         </element>
-        <element id="Condition.clinicalStatus.text">
-            <path value="Condition.clinicalStatus.text"/>
-            <min value="0"/>
-            <max value="0"/>
-            <mustSupport value="false"/>  
-        </element>
+        
         <element id="Condition.verificationStatus">
             <path value="Condition.verificationStatus"/>
             <min value="0"/>
             <max value="1"/>
             <mustSupport value="true"/>  
         </element>
-        <element id="Condition.verificationStatus.text">
-            <path value="Condition.verificationStatus.text"/>
-            <min value="0"/>
-            <max value="0"/>
-            <mustSupport value="false"/>  
-        </element>
+        
         <element id="Condition.category">
             <path value="Condition.category"/>
             <min value="1"/>
@@ -138,29 +157,170 @@
             <max value="0"/>
             <mustSupport value="false"/>
         </element>
-        <element id="Condition.onset">
-            <path value="Condition.onsetDateTime"/>
+        <element id="Condition.onset[x]">
+            <path value="Condition.onset[x]"/>
             <min value="0"/>
             <max value="1"/>
-            <type>
-                <code value="dateTime"/>
-            </type>
+		      <type>
+		        <extension
+		                   url="http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support">
+		          <valueBoolean value="true"/>
+		        </extension>
+		        <code value="dateTime"/>
+		      </type>
+		      <type>
+		        <code value="Period"/>
+		      </type>
+		      <constraint>
+		        <key value="dapl-diag-2"/>
+		        <severity value="error"/>
+		        <human
+		               value="All dateTime data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is DateTime implies $this.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-diag-2a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All dateTime data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is DateTime implies $this.toString() &gt;= '1900'"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-diag-3"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is Period and Period.start.exists() implies $this.start.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-diag-3a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is Period and Period.start.exists() implies $this.start.toString() &gt;= '1900'"/>
+		      </constraint>
+		     <constraint>
+		        <key value="dapl-diag-4"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.emd data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is Period and Period.end.exists() implies $this.end.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapls-diag-4a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is Period and Period.end.exists() implies $this.end.toString() &gt;= '1900'"/>
+		      </constraint>
             <mustSupport value="true"/>
         </element>
-        <element id="Condition.abatement">
-            <path value="Condition.abatementDateTime"/>
+        <element id="Condition.abatement[x]">
+            <path value="Condition.abatement[x]"/>
             <min value="0"/>
             <max value="1"/>
-            <type>
-                <code value="dateTime"/>
-            </type>
+		      <type>
+		        <code value="dateTime"/>
+		      </type>
+		      <type>
+		        <code value="Period"/>
+		      </type>
+		      <constraint>
+		        <key value="dapl-diag-5"/>
+		        <severity value="error"/>
+		        <human
+		               value="All dateTime data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is DateTime implies $this.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-diag-5a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All dateTime data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is DateTime implies $this.toString() &gt;= '1900'"/>
+		      </constraint>
+		 
+		      <constraint>
+		        <key value="dapl-diag-6"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is Period and Period.start.exists() implies $this.start.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-diag-6a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is Period and Period.start.exists() implies $this.start.toString() &gt;= '1900'"/>
+		      </constraint>
+		       <constraint>
+		        <key value="dapl-diag-7"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.emd data elements should be truncated to a year only for de-identified resources."/>
+		        <expression
+		                    value="$this is Period and Period.end.exists() implies $this.end.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-diag-7a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All Period.start data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is Period and Period.end.exists() implies $this.end.toString() &gt;= '1900'"/>
+		      </constraint>
+		      
+		      <mustSupport value="true"/>
+		    </element>
+		  <element id="Condition.recordedDate">
+		      <path value="Condition.recordedDate"/>
+		      <min value="0"/>
+		      <max value="1"/>
+		      <constraint>
+		        <key value="dapl-diag-8"/>
+		        <severity value="error"/>
+		        <human
+		               value="All dateTime data elements should be truncated to a year only for de-identified resources."/>
+		        <expression value="$this.toString().length() = 4"/>
+		      </constraint>
+		      <constraint>
+		        <key value="dapl-diag-8a"/>
+		        <severity value="error"/>
+		        <human
+		               value="All dateTime data elements should have valid year &gt; 1900"/>
+		        <expression
+		                    value="$this is DateTime implies $this.toString() &gt;= '1900'"/>
+		      </constraint>
             <mustSupport value="true"/>
         </element>
-        <element id="Condition.recordedDate">
-            <path value="Condition.recordedDate"/>
-            <min value="0"/>
-            <max value="1"/>
-            <mustSupport value="true"/>
-        </element>
+        <element id="Condition.recorder.display">
+	      <path value="Condition.recorder.display"/>
+	      <min value="0"/>
+	      <max value="0"/>
+	      <mustSupport value="false"/>
+	    </element>
+	    <element id="Condition.asserter.display">
+	      <path value="Condition.asserter.display"/>
+	      <min value="0"/>
+	      <max value="0"/>
+	      <mustSupport value="false"/>
+	    </element>
+	    <element id="Condition.note">
+	      <path value="Condition.note"/>
+	      <min value="0"/>
+	      <max value="0"/>
+	      <mustSupport value="false"/>
+	    </element>
     </differential>
 </StructureDefinition>

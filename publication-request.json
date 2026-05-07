@@ -12,5 +12,8 @@
   "category" : "Privacy / Security",
   "title" : "De-identified, Anonymized FHIR Profiles Library (DAPL) IG",
   "ci-build" : "https://build.fhir.org/ig/HL7/fhir-dapl/",
+  "registry-description" : "De-identified, Anonymized Profiles Library (DAPL) FHIR IG defines a set of FHIR profiles to represent de-identified and anonymized data.",
+  "registry-country" : "US",
+  "registry-authority" : "HL7",
   "introduction" : "De-identified, Anonymized Profiles Library (DAPL) FHIR IG defines a set of FHIR profiles to represent de-identified and anonymized data."  
 }

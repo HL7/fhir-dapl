@@ -10,7 +10,7 @@
 	  <valueCode value="trial-use"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
-	  <valueInteger value="1"/>
+	  <valueInteger value="2"/>
   </extension>
   <url value="http://hl7.org/fhir/us/dapl/ImplementationGuide/dapl"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
@@ -480,6 +480,14 @@
     <parameter>
       <code value="no-narrative"/>
       <value value="Observation/de-identified-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Location/deidentified-location-example"/>
+    </parameter>
+    <parameter>
+      <code value="no-narrative"/>
+      <value value="Organization/deidentified-organization-example"/>
     </parameter>  
     <parameter>
       <code value="no-narrative"/>
@@ -580,7 +588,7 @@
     <!-- releaselabel should be the ballot status for HL7-published IGs. -->
     <parameter>
       <code value="releaselabel"/>
-     <value value="STU1 Release 1 - Standard for Trial-Use"/>
+     <value value="STU 1 Ballot"/>
     </parameter>
     <parameter>
       <code value="find-other-resources"/>

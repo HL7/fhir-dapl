@@ -1,5 +1,3 @@
-{:.stu-note}
-All canonical (Official) URLs will be changed in the future and are not available currently on the web.
 
 ### Introduction
 
@@ -25,25 +23,25 @@ In FHIR Resources, text elements which provide human readable information to the
 
 **Age Computation** 
 
-The Data Submitter has to compute the age based as of December 31st of the previous year for inclusion in the UDS+ report.
+The Data Submitter has to compute the age based as of December 31st of the previous year for most use cases related to federal reporting such as UDS+.
 
 **Id Generation** 
 
-The original patient resource id should not be included in the De-identified patient instance. Instead a new id should be created and provided as part of the FHIR resource. This Data Submitter should be capable of using the generated id to relink the data to the original patient. All resource references to the Patient submitted as part of the UDS+ report should refer to newly generated de-identified id.
+The original patient resource id should not be included in the De-identified patient instance. Instead a new id should be created and provided as part of the FHIR resource. This Data Submitter should be capable of using the generated id to relink the data to the original patient. All resource references to the Patient submitted as part of the data exchange should refer to newly generated de-identified id.
 
 **Usage of Data Absent Reason Extension**
 
-For the UDS+ reporting, the patient data is de-identified and in the process zip codes may be masked to a value of "00000". In these cases the dataAbsentReason extension must be added to identify that the data is "masked".
+For federal reporting, the patient data is de-identified and in the process zip codes may be masked to a value of "00000". In these cases the dataAbsentReason extension must be added to identify that the data is "masked".
 If the zip code is not known, a value of "00000" must be sent with a dataAbsentReason of "unknown".
 If the zip code is outside the country, a value of "00000" must be sent with a dataAbsentReason of "unsupported".
 
-**Birth Sex Additional Constraints**
+**Sex Additional Constraints**
 
-NullFlavors are not allowed for BirthSex reporting for UDS+ even though they are allowed in US Core.
+NullFlavors may not allowed for sex reporting in some use cases such as UDS+ even though they are allowed in US Core.
 
 **Race and Ethnicity Additional Constraints**
 
-US Core allows Race and Ethnicity to be described as only text or rolled up to the OMB categories, however for UDS+ reporting detailed race and ethnicity have to be captured and reported as part of the profile. If the reported race and ethncity values are not null flavors then detailed values are mandatory.
+US Core allows Race and Ethnicity to be described as only text or rolled up to the OMB categories, however federal agencies may mandate reporting detailed race and ethnicity. 
 
 **Sexual Orientation Additional Constraints**
 

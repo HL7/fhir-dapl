@@ -1,5 +1,3 @@
-{:.stu-note}
-All canonical (Official) URLs will be changed in the future and are not available currently on the web.
 
 ### Introduction
 
@@ -11,7 +9,7 @@ In FHIR Resources, text elements and reference.display elements which provide hu
 
 **Ids and References**
 
-The original Observation resource id should not be included in the De-identified Observation instance. Instead a new id should be created and provided as part of the FHIR resource. This Data Submitter should be capable of using the generated id to relink the data to the original Income Observation. All resource references to the Income Observation submitted as part of the UDS+ report should refer to newly generated id.
+The original Observation resource id should not be included in the De-identified Observation instance. Instead a new id should be created and provided as part of the FHIR resource. This Data Submitter should be capable of using the generated id to relink the data to the original Income Observation. All resource references to the Income Observation submitted as part of the data exchange should refer to newly generated id.
 
 Resource references cannot contain text element as it may contain PHI/PII. The text element for following references are not allowed
 

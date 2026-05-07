@@ -7,7 +7,7 @@
         <lastUpdated value="2026-03-27T02:03:21.911+00:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/dapl/StructureDefinition/dapl-race-extension"/>
-    <version value="0.1.0"/>
+    <version value="1.0.0-ballot"/>
     <name value="DAPLDeidentifiedRaceExtension"/>
     <title value="DAPL Deidentified Race Extension"/>
     <status value="active"/>
