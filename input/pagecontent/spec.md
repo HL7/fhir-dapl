@@ -37,7 +37,6 @@ The following definition of MUST SUPPORT is to be used in the implementation of 
 * <span class="fhir-conformance">When accessing de-identified or anonymized data, Systems SHALL interpret missing data elements within resource instances returned from API requests as data that has been removed as part of the de-identification and anonymization process.</span>
 
 
-
 #### Profiles
 
 This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html) and terminology artifacts to describe the content to be shared as data exchange workflows. The implementation guide is based on [FHIR R4]({{site.data.fhir.path}}) and profiles are listed for each interaction.
